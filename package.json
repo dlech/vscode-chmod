@@ -1,0 +1,50 @@
+{
+    "name": "chmod",
+    "displayName": "chmod",
+    "description": "Set and clears the executable bits of a file",
+    "version": "1.0.0",
+    "publisher": "dlech",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.chmodPlusX",
+        "onCommand:extension.chmodMinusX"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.chmodPlusX",
+            "title": "Set Executable Bits",
+            "category": "chmod"
+        },{
+            "command": "extension.chmodMinusX",
+            "title": "Clear Executable Bits",
+            "category": "chmod"
+        }],
+        "menus": {
+            "explorer/context": [{
+                "when": "!explorerResourceIsFolder && !exportResourceIsExecutable",
+                "command": "extension.chmodPlusX",
+                "alt": "extension.chmodMinusX",
+                "group": "1_chmod"
+            }]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    }
+}
