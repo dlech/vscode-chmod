@@ -4,6 +4,10 @@
     "description": "Set and clears the executable bits of a file",
     "version": "1.0.0",
     "publisher": "dlech",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dlech/vscode-chmod.git"
+    },
     "engines": {
         "vscode": "^1.5.0"
     },
