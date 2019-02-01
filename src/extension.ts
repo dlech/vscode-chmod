@@ -37,12 +37,12 @@ export function activate(context: vscode.ExtensionContext) {
         }
     };
 
-    let chmodPlusX = vscode.commands.registerCommand('extension.chmodPlusX', (res) => {
+    const chmodPlusX = vscode.commands.registerCommand('chmod.plusX', res => {
         chmod(res, true);
     });
     context.subscriptions.push(chmodPlusX);
 
-    let chmodMinusX = vscode.commands.registerCommand('extension.chmodMinusX', (res) => {
+    const chmodMinusX = vscode.commands.registerCommand('chmod.minusX', res => {
         chmod(res, false);
     });
     context.subscriptions.push(chmodMinusX);

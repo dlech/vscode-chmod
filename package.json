@@ -15,19 +15,19 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.chmodPlusX",
-        "onCommand:extension.chmodMinusX"
+        "onCommand:chmod.plusX",
+        "onCommand:chmod.minusX"
     ],
     "main": "./out/extension.js",
     "contributes": {
         "commands": [
             {
-                "command": "extension.chmodPlusX",
+                "command": "chmod.plusX",
                 "title": "Set Executable Bits",
                 "category": "chmod"
             },
             {
-                "command": "extension.chmodMinusX",
+                "command": "chmod.minusX",
                 "title": "Clear Executable Bits",
                 "category": "chmod"
             }
@@ -36,8 +36,8 @@
             "explorer/context": [
                 {
                     "when": "!explorerResourceIsFolder && !exportResourceIsExecutable",
-                    "command": "extension.chmodPlusX",
-                    "alt": "extension.chmodMinusX",
+                    "command": "chmod.plusX",
+                    "alt": "chmod.minusX",
                     "group": "1_chmod"
                 }
             ]
