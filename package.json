@@ -20,22 +20,27 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.chmodPlusX",
-            "title": "Set Executable Bits",
-            "category": "chmod"
-        },{
-            "command": "extension.chmodMinusX",
-            "title": "Clear Executable Bits",
-            "category": "chmod"
-        }],
-        "menus": {
-            "explorer/context": [{
-                "when": "!explorerResourceIsFolder && !exportResourceIsExecutable",
+        "commands": [
+            {
                 "command": "extension.chmodPlusX",
-                "alt": "extension.chmodMinusX",
-                "group": "1_chmod"
-            }]
+                "title": "Set Executable Bits",
+                "category": "chmod"
+            },
+            {
+                "command": "extension.chmodMinusX",
+                "title": "Clear Executable Bits",
+                "category": "chmod"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "!explorerResourceIsFolder && !exportResourceIsExecutable",
+                    "command": "extension.chmodPlusX",
+                    "alt": "extension.chmodMinusX",
+                    "group": "1_chmod"
+                }
+            ]
         }
     },
     "scripts": {
