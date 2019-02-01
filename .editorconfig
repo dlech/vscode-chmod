@@ -1,0 +1,10 @@
+root = true
+
+[*]
+insert_final_newline = true
+
+[*.{json,md,ts}]
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+end_of_line = lf
