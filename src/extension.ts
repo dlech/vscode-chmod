@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
     // common function for setting or clearing executable bits
     // @param res     a uri for the selected resource (context menu) or null
     // @param enable  set to true to to chmod +x or false to chmod -x
-    let chmod = function(res: vscode.Uri, enable: boolean) {
+    const chmod = function(res: vscode.Uri, enable: boolean) {
         try {
             let fileName: string;
             if (!res) {
@@ -23,9 +23,9 @@ export function activate(context: vscode.ExtensionContext) {
                 }
                 fileName = res.path;
             }
-            let stat = fs.statSync(fileName);
+            const stat = fs.statSync(fileName);
             let mode = stat.mode & 0xFFFF;
-            let x = fs.constants.S_IXUSR | fs.constants.S_IXGRP | fs.constants.S_IXOTH;
+            const x = fs.constants.S_IXUSR | fs.constants.S_IXGRP | fs.constants.S_IXOTH;
             if (enable) {
                 mode |= x;
             } else {
