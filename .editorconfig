@@ -8,3 +8,15 @@ indent_size = 4
 indent_style = space
 trim_trailing_whitespace = true
 end_of_line = lf
+
+[*.json]
+indent_size = 4
+indent_style = tab
+trim_trailing_whitespace = true
+end_of_line = lf
+
+[{settings,package}.json]
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+end_of_line = lf

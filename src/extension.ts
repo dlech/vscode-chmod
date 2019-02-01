@@ -7,17 +7,17 @@ export function activate(context: vscode.ExtensionContext) {
     // common function for setting or clearing executable bits
     // @param res     a uri for the selected resource (context menu) or null
     // @param enable  set to true to to chmod +x or false to chmod -x
-    let chmod = function(res, enable) {
+    let chmod = function(res: vscode.Uri, enable: boolean) {
         try {
             let fileName: string;
-            if (res == null) {
-                if (vscode.window.activeTextEditor == undefined) {
+            if (!res) {
+                if (vscode.window.activeTextEditor === undefined) {
                     vscode.window.showInformationMessage('No document selected.');
                     return;
                 }
                 fileName = vscode.window.activeTextEditor.document.fileName;
             } else {
-                if (res.scheme != "file") {
+                if (res.scheme !== "file") {
                     vscode.window.showInformationMessage('Selected item is not a file.');
                     return;
                 }
@@ -33,9 +33,9 @@ export function activate(context: vscode.ExtensionContext) {
             }
             fs.chmodSync(fileName, mode);
         } catch (error) {
-            vscode.window.showErrorMessage(error)
+            vscode.window.showErrorMessage(error);
         }
-    }
+    };
 
     let chmodPlusX = vscode.commands.registerCommand('extension.chmodPlusX', (res) => {
         chmod(res, true);
