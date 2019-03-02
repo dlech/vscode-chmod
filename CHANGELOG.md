@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Windows support via `git update-index` ([#2](https://github.com/dlech/vscode-chmod/issues/2))
 
-## 1.0.0
+## 1.0.0 - 2017-03-31
 - Initial release
 
 [Unreleased]: https://github.com/dlech/vscode-chmod/compare/v1.0.0...HEAD
