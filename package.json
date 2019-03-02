@@ -33,12 +33,30 @@
             }
         ],
         "menus": {
+            "commandPalette": [
+                {
+                    "command": "chmod.plusX",
+                    "when": "false"
+                },
+                {
+                    "command": "chmod.minusX",
+                    "when": "false"
+                }
+            ],
             "explorer/context": [
                 {
-                    "when": "!explorerResourceIsFolder && !exportResourceIsExecutable",
+                    "when": "!isWindows && !explorerResourceIsFolder",
                     "command": "chmod.plusX",
                     "alt": "chmod.minusX",
                     "group": "1_chmod"
+                }
+            ],
+            "scm/resourceState/context": [
+                {
+                    "when": "isWindows && scmProvider == git",
+                    "command": "chmod.plusX",
+                    "alt": "chmod.minusX",
+                    "group": "9_chmod"
                 }
             ]
         }
