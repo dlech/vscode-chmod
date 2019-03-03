@@ -4,7 +4,7 @@
     "description": "Set and clears the executable bits of a file",
     "license": "MIT",
     "icon": "logo.png",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "publisher": "dlech",
     "repository": {
         "type": "git",
