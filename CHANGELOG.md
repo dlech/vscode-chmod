@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Logo (so this looks like a real extension)
 - Windows support via `git update-index` ([#2](https://github.com/dlech/vscode-chmod/issues/2))
 
 ## 1.0.0 - 2017-03-31

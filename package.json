@@ -2,6 +2,7 @@
     "name": "chmod",
     "displayName": "chmod",
     "description": "Set and clears the executable bits of a file",
+    "icon": "logo.png",
     "version": "1.0.0",
     "publisher": "dlech",
     "repository": {
