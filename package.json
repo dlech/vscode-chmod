@@ -37,12 +37,10 @@
         "menus": {
             "commandPalette": [
                 {
-                    "command": "chmod.plusX",
-                    "when": "false"
+                    "command": "chmod.plusX"
                 },
                 {
-                    "command": "chmod.minusX",
-                    "when": "false"
+                    "command": "chmod.minusX"
                 }
             ],
             "explorer/context": [

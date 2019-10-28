@@ -7,12 +7,12 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
     const chmodPlusX = vscode.commands.registerCommand('chmod.plusX', (res: any) => {
-        chmod(res.resourceUri || res, true).catch(reason => vscode.window.showErrorMessage(reason.message));
+        chmod(res && res.resourceUri || res, true).catch(reason => vscode.window.showErrorMessage(reason.message));
     });
     context.subscriptions.push(chmodPlusX);
 
     const chmodMinusX = vscode.commands.registerCommand('chmod.minusX', (res: any) => {
-        chmod(res.resourceUri || res, false).catch(reason => vscode.window.showErrorMessage(reason.message));
+        chmod(res && res.resourceUri || res, false).catch(reason => vscode.window.showErrorMessage(reason.message));
     });
     context.subscriptions.push(chmodMinusX);
 }
